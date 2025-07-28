@@ -8,7 +8,7 @@ Each project demonstrates practical problem-solving, with code, datasets, and ou
 | Project                                  | Description                                                 | Tools & Skills                        |
 |------------------------------------------|-------------------------------------------------------------|---------------------------------------|
 | **Tourism & Migration Data Analysis**    | Cleaned sales data, identified seasonal trends, built KPIs. | Power BI                              |
-| **Apartment H20 billing and management** | Created Excel model, forms and dashboards, identify user behaviour, monitor consumption spikes | Excel|
+| **BI - Apartment H20 billing and management** | Created Excel model, forms and dashboards, identify user behaviour, monitor consumption spikes | Excel|
 ---
 
 ## 🚀 How to Explore
