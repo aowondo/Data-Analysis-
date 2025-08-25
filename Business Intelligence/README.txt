@@ -1,71 +1,53 @@
-README – Water Billing System Project
-Project Overview
+# 💧 Water Billing System
 
-This project is an Excel-based water billing and consumption monitoring system designed to streamline utility management for multiple properties. It integrates billing generation, consumption tracking, and operational insights into one centralized file.
+## 📌 Overview
+The **Water Billing System** is designed to automate utility billing by generating invoices and providing an operations dashboard for consumption monitoring.  
+It supports **multi-house management**, tracks usage, and integrates billing calculations in **Excel** with support from **Python for sample data generation**.
 
-To support testing and realistic simulation of the system, a Python-based data generator was developed to create synthetic sample datasets, including controlled consumption spikes and irregular usage patterns. This ensured robust testing of billing logic, anomaly detection, and dashboard performance before deployment with real data.
+---
 
-Objectives
+## ⚡ Key Features
+- **Automated Invoice Generation** – Create one-click invoices in PDF format directly from the dashboard.  
+- **Operations Dashboard** – Monitor water consumption across houses, analyze trends, and flag spikes.  
+- **Consumption Spike Simulation** – Includes a **Python data generator** that introduces realistic usage patterns to mimic real-world data.  
+- **Multi-House Management** – Each house has a dedicated worksheet with its own billing table.  
+- **Flexible Data Entry** – Input form automatically appends records to the correct house worksheet.  
 
-Automate the preparation and tracking of water bills for different houses.
+---
 
-Monitor water consumption patterns and detect unusual spikes.
+## 🏗️ Project Structure
+| File | Description |
+|---------------|-------------|
+| `sample data generator.ipynb` | Generates sample data, including **spikes** in consumption for realistic testing. |
+| `water_management.xlsm` | Core Excel workbook with operations dashboard and invoice generator. |
+| `water_meter_sample_data` | Contains generated data for each house (billing tables). |
+| `README.md` | Documentation file (this file). |
 
-Enable quick analysis of individual meter usage over time.
+---
 
-Provide a centralized operations dashboard for property managers.
+## 🖥️ Workflow
+1. **Generate Data** using the Python script to populate realistic consumption records.  
+2. **Update House Sheets** with new readings via the input form.  
+3. **Monitor Dashboard** for spikes, anomalies, and summaries.  
+4. **Generate Invoice** from the dashboard with a single click.  
 
-Reduce manual errors and improve efficiency in utility management.
+---
 
-Test system reliability using simulated datasets that mimic real-world water consumption behavior.
+## 🛠️ Tech Stack
+- **Excel (VBA Macros)** – Core billing logic and dashboard functionality.  
+- **Python (Pandas, ReportLab)** – Data generator + PDF automation.  
+- **Markdown** – Project documentation.  
 
-Target Insights
+---
 
-Monthly Consumption Trends – Track and compare water usage month-to-month for each house.
+## 📊 Sample Data Simulation
+The Python script adds **randomized consumption values** with built-in **spikes** to test anomaly detection and billing accuracy.  
 
-High Consumption Alerts – Identify unusual consumption spikes that may indicate leaks or misuse.
+```python
+# Example snippet from data generator
+import random
 
-Individual Meter Analysis – Drill down into the usage history for a specific meter/house.
+def generate_consumption(days=30):
+    return [random.randint(5, 15) if i % 10 != 0 else random.randint(30, 50) for i in range(days)]
 
-Revenue Tracking – Monitor billed amounts versus expected payments.
-
-Operational Summary – Display key metrics in the operations dashboard for quick decision-making.
-
-Tools & Features Used
-Excel/VBA
-
-Microsoft Excel – Primary platform for data entry, analysis, and reporting.
-
-VBA (Visual Basic for Applications) – Automates data filtering, form inputs, and bill generation.
-
-Tables & Structured References – Organizes and formats data for consistency and easy expansion.
-
-UserForms – Simplifies the billing data entry process.
-
-PivotTables & Charts – Visualizes trends and anomalies in water usage.
-
-Conditional Formatting – Highlights spikes in consumption or overdue bills.
-
-Dynamic Dashboards – Centralized operational view for management.
-
-Python (Data Generator)
-
-Synthetic Data Creation – Generates test datasets for multiple houses and billing cycles.
-
-Consumption Spikes Simulation – Adds anomalies (e.g., sudden usage surges) to test spike detection logic.
-
-Randomized Normal Usage – Mimics realistic household consumption ranges for testing.
-
-Export to Excel/CSV – Seamlessly integrates with the billing system for testing dashboards and invoices.
-
-Usage
-
-Input monthly meter readings via the form (or load generated datasets for testing).
-
-The system calculates consumption, generates invoices, and logs records in the respective house’s sheet.
-
-The operations dashboard automatically updates with key metrics and insights.
-
-Use the Python data generator to stress-test the system with synthetic data before live use.
-
-Filter and drill down to specific houses or time periods as needed.
+print(generate_consumption())
